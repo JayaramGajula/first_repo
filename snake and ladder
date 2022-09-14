@@ -15,24 +15,28 @@ public class App {
         if(x>100){
             x=x-x1;
         }
+       // System.out.print(x+".");
         x=ladder(x);//ladder
         x=snakes(x);//snakes
         x=mm(x);//checking 6
-        
+         System.out.print(x+".");
         
         int y1=1+(Math.abs(r.nextInt())%6);
         y=y+y1;
+        //System.out.print(y+"...");
          if(y>100){
             y=y-y1;
         }
         y=ladder(y);//ladder
         y=snakes(y);//snakes
-        y=mm(x);//checking 6
+        y=mm(y);//checking 6
+         System.out.print(y+"...");
         
        
         
     }
-    if(x>100){
+    System.out.println();
+    if(x==100){
         System.out.println("x wins");
     }else{
         System.out.println("y wins");
