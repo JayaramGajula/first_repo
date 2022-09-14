@@ -1,0 +1,101 @@
+import java.util.Random;
+import java.util.Scanner;
+
+
+public class App {
+    public static void main(String[] args) throws Exception {
+     //System.out.println("Hello, World!");
+     Scanner sc=new Scanner(System.in);
+     Random r=new Random();
+     int x=0,y=0;
+     while(x<100 && y<100)
+    {
+        int x1=1+(Math.abs(r.nextInt())%6);
+        x=x+x1;
+        if(x>100){
+            x=x-x1;
+        }
+        x=ladder(x);//ladder
+        x=snakes(x);//snakes
+        x=mm(x);//checking 6
+        
+        
+        int y1=1+(Math.abs(r.nextInt())%6);
+        y=y+y1;
+         if(y>100){
+            y=y-y1;
+        }
+        y=ladder(y);//ladder
+        y=snakes(y);//snakes
+        y=mm(x);//checking 6
+        
+        
+        
+    }
+    if(x>100){
+        System.out.println("x wins");
+    }else{
+        System.out.println("y wins");
+    }
+
+    }
+    public static int ladder(int a)
+    {
+        if(a==80)
+        {
+            return 99;
+        }else if(a==72)
+        {
+            return 91;
+        }else if(a==51)
+        {
+            return 67;
+        }else if(a==28){
+            return 84;
+        }else if(a==21){
+            return 42;
+        }else if(a==1){
+            return 38;
+        }else if(a==4){
+            return 14;
+        }else if(a==9){
+            return 31;
+        }
+        return a;
+        
+    }//end of ladder method
+    public static int snakes(int b)
+    {
+        int h[],j[];
+        h=new int[]{17,54,62,87,93,95,98};
+        j=new int[]{7,34,18,36,73,75,79};
+       // h[7]={17,54,62,87,93,95,98};
+        //j[7]={7,34,18,36,73,75,79};
+        for(int i=0;i<7;i++)
+        {
+            if(b==h[i])
+            {
+                return j[i];
+            }
+        }
+        return b;
+        
+    }//end 0f snakes method
+    public static int mm(int c)
+    {
+        int u=0,k;
+        Random r=new Random();
+        if(c==6 && u<3){
+            u++;
+            k=1+(Math.abs(r.nextInt())%6);
+            k=k+c;
+            k=ladder(k);
+            k=snakes(k);
+            k=mm(k);
+            return k;
+        }
+        return c;
+        
+    }
+    
+}
