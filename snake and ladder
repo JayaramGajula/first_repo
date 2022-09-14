@@ -81,6 +81,8 @@ public class App {
         return b;
         
     }//end 0f snakes method
+    
+    
     public static int mm(int c)
     {
         int u=0,k;
