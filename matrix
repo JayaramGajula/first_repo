@@ -1,0 +1,54 @@
+import java.util.Scanner;
+public class Matrix{
+    public static void main(String []args)
+    {
+        int a[][]={{1,0,6,7,8},{3,7,0,8,0},{5,8,9,7,0},{0,9,0,8,0}};
+        int r=4,c=5;
+        for(int i=0;i<r;i++)
+        {
+            for(int j=0;j<c;j++)
+            {
+                if(a[i][j]==0)
+                {
+                    if(i==0 && j==0)
+                    {
+                        a[i][j]=(a[i][j+1]+a[i+1][j]+a[i+r-1][j]+a[i][j+c-1])/4;
+                    }else if(i==0 && j==c-1)
+                    {
+                        a[i][j]=(a[i+1][j]+a[i][j-1]+a[i+r-1][j-c+1]+a[i][j-c+1])/4;
+                    }else if(i==r-1 && j==0)
+                    {
+                        a[i][j]=(a[i-1][j]+a[i][j+1]+a[i-r+1][i][j+c-1])/4;
+                    }else if(i==r-1 && j==c-1)
+                    {
+                        a[i][j]=(a[i-1][j]+a[i][j-1]+a[i-r+1][j]+a[i][j-c+1])/4;
+                    }else if(i==0)
+                    {
+                        a[i][j]=(a[i][j+1]+a[i][j-1]+a[i+1][j]+a[i+r-1][j])/4;
+                    }else if(i==(r-1))
+                    {
+                        a[i][j]=(a[i][j+1]+a[i][j-1]+a[i-1][j]+a[i-r+1][j])/4;
+                    }else if(j==0)
+                    {
+                        a[i][j]=(a[i+1][j]+a[i-1][j]+a[i][j+1]+a[i][j+c-1])/4;
+                    }else if(j==(c-1))
+                    {
+                        a[i][j]=(a[i+1][j]+a[i-1][j]+a[i][j-1]+a[i][j-c+1])/4;
+                    }
+                    else{
+                        a[i][j]=(a[i-1][j]+a[i+1][j]+a[i][j+1]+a[i][j-1])/4;
+                    }
+                }
+            }
+        }
+        for(int i=0;i<r;i++)
+        {
+            for(int j=0;j<c;j++)
+            {
+                System.out.print(a[i][j]+"  ");
+            }
+            System.out.println();
+
+        }
+    }
+}
