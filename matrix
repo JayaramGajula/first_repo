@@ -18,7 +18,7 @@ public class Matrix{
                         a[i][j]=(a[i+1][j]+a[i][j-1]+a[i+r-1][j-c+1]+a[i][j-c+1])/4;
                     }else if(i==r-1 && j==0)
                     {
-                        a[i][j]=(a[i-1][j]+a[i][j+1]+a[i-r+1][i][j+c-1])/4;
+                        a[i][j]=(a[i-1][j]+a[i][j+1]+a[i-r+1][j]+a[i][j+c-1])/4;
                     }else if(i==r-1 && j==c-1)
                     {
                         a[i][j]=(a[i-1][j]+a[i][j-1]+a[i-r+1][j]+a[i][j-c+1])/4;
