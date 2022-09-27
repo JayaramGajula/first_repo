@@ -1,0 +1,24 @@
+public class encryption{
+    public static void main(String[]args)
+    {
+        String Q="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String p="HELLO";
+        char a[]=Q.toCharArray();
+        char b[]=p.toCharArray();
+        String o;
+        
+        for(int i=0;i<b.length;i++)
+        {
+            o=" ";
+            for(int j=0;j<a.length;j++)
+            {
+                if(a[j]==b[i])
+                {
+                    o=o+a[(j+3)%26];
+                    break;
+                }
+            }
+            System.out.print(o);
+        }
+    }
+}
