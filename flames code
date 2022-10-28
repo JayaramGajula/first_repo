@@ -1,0 +1,62 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int common(char a[],char b[])
+{
+    int c=0;                        //cancelling comman terms and returning                                    the value
+    for(int i=0;i<strlen(a);i++)
+    {
+        for (int j=0; j<strlen(b);j++)
+        {
+            if(a[i]==b[j])
+            {
+                c=c+1;
+                b[j]=' ';
+                break;
+            }
+        }
+    }
+    return (strlen(a)+strlen(b)-(c*2));
+}
+void f(int n)
+{
+    char d[6]={'f','l','a','m','e','s'};
+    int c=0,a=0;
+    for(int i=0;i<6;i++)
+    {
+        
+        if(d[i]!=' ')
+        {
+            c=c+1;
+        }
+       
+        if(c==n && a!=6)
+        {
+            d[i]=' ';
+            a=a+1;
+            i=0;
+            c=0;
+            //continue;
+        }
+        
+        if(i==5)
+            i=0;
+        if(a==5)
+            break;
+            
+        
+    }
+    puts(d);
+}
+
+int main()
+{
+    char a[20],b[20];
+    gets(a);
+    gets(b);
+    int r=common(a,b);
+    printf("%d",r);
+    f(r);
+    return 0;
+ 
+}
