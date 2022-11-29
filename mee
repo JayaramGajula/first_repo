@@ -1,0 +1,12 @@
+from tkinter import *
+def main_screen():
+    screen=TK()
+    screen.gementry("500x250")
+    screen.title("multiple choice correction")
+    label(text="MARKS VERFICATION",bg="red",font=("calibri",15)).pack()
+    label(text="")
+    Button(text="login")
+    label(text="")
+    Button(text="register")
+    screen.mainloop()
+main_screen()
