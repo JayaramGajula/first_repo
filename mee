@@ -1,12 +1,92 @@
 from tkinter import *
+import os
+def reg_user():
+    username_info=username.get()
+    password_info=password.get()
+    file=open(username_info,"w")
+    file.write(username_info+"\n")
+    file.write(password_info)
+    file.close()
+    user_enter.delete(0,END)
+    pass_enter.delete(0,END)
+    Label(screen1,text="resgistration completed",bg="blue").pack()
+
+    
+def register():
+    global screen1
+    global username
+    global password
+    global user_enter
+    global pass_enter
+    screen1=Toplevel(screen)
+    screen1.title("REgister")
+    screen1.geometry("400x250")
+    username=StringVar()
+    password=StringVar()
+    Label(screen1,text="").pack()
+    Label(screen1,text="username").pack()
+    user_enter=Entry(screen1,textvariable=username)#giveoing option to enter the username
+    user_enter.pack()
+    Label(screen1,text="").pack()
+    Label(screen1,text="password").pack()
+    pass_enter=Entry(screen1,textvariable=password)
+    #writing scree1 beacause if we not write scree1 these alla will palced in main screen
+    pass_enter.pack()
+    Button(screen1,text="register",command=reg_user).pack()
+def login_ver():
+    user=use_ver.get()
+    user=user+".txt"
+    passw=pass_ver.get()
+    use_enter.delete(0,END)
+    pass_enter.delete(0,END)
+    L_files=os.listdir()
+    #print(L_files)
+    #print(user)
+    if user in L_files:
+        file1=open(user,"r")
+        verify=file1.read().splitlines()
+        if passw in verify:
+            print("logi success")
+        else:
+            print("password in coorect")
+    else:
+        print("user not found")
+        
+    
+    
+    
+    
+def login():
+    global screen2
+    global use_ver
+    global pass_ver
+    global use_enter
+    global pass_enter
+    screen2=Toplevel(screen)
+    use_ver=StringVar()
+    pass_ver=StringVar()
+    screen2.geometry("450x300")
+    Label(screen2,text="enter detais for login").pack()
+    Label(screen2,text="").pack()
+    Label(screen2,text="username").pack()
+    use_enter=Entry(screen2,textvariable=use_ver)
+    use_enter.pack()
+    Label(screen2,text="").pack()
+    Label(screen2,text="password").pack()
+    pass_enter=Entry(screen2,textvariable=pass_ver)
+    pass_enter.pack()
+    Button(screen2,text="login",command=login_ver).pack()
+    
+    
 def main_screen():
-    screen=TK()
-    screen.gementry("500x250")
+    global screen
+    screen=Tk()
+    screen.geometry("500x250")
     screen.title("multiple choice correction")
-    label(text="MARKS VERFICATION",bg="red",font=("calibri",15)).pack()
-    label(text="")
-    Button(text="login")
-    label(text="")
-    Button(text="register")
+    Label(text="MARKS VERFICATION",bg="red",font=("calibri",15)).pack()
+    Label(text="").pack()
+    Button(text="login",command=login).pack()
+    Label(text="").pack()
+    Button(text="register",command=register).pack()
     screen.mainloop()
 main_screen()
