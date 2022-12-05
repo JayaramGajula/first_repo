@@ -35,7 +35,7 @@ def register():
     Button(screen1,text="register",command=reg_user).pack()
 def login_ver():
     user=use_ver.get()
-    user=user+".txt"
+
     passw=pass_ver.get()
     use_enter.delete(0,END)
     pass_enter.delete(0,END)
@@ -46,11 +46,11 @@ def login_ver():
         file1=open(user,"r")
         verify=file1.read().splitlines()
         if passw in verify:
-            print("logi success")
+            Label(screen2,text="logi success",bg="green").pack()
         else:
-            print("password in coorect")
+            Label(screen2,text="password in coorect",bg="red").pack()
     else:
-        print("user not found")
+        Label(screen2,text="user not found",bg="red").pack()
         
     
     
