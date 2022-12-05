@@ -3,13 +3,21 @@ import os
 def reg_user():
     username_info=username.get()
     password_info=password.get()
-    file=open(username_info,"w")
-    file.write(username_info+"\n")
-    file.write(password_info)
-    file.close()
+    
+    L_files=os.listdir()
+    if username_info in L_files:
+        Label(screen1,text="username already exist",bg="blue").pack()
+    else:
+        file=open(username_info,"w")
+        
+        file.write(username_info+"\n")
+    
+        file.write(password_info)
+        file.close()
+        Label(screen1,text="resgistration completed",bg="blue").pack()
     user_enter.delete(0,END)
     pass_enter.delete(0,END)
-    Label(screen1,text="resgistration completed",bg="blue").pack()
+    
 
     
 def register():
