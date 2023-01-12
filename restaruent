@@ -1,0 +1,189 @@
+from tkinter import *
+import os
+def reg_user():
+    username_info=username.get()
+    password_info=password.get()
+    
+    L_files=os.listdir()
+    if username_info in L_files:
+        Label(screen1,text="username already exist",bg="blue").pack()
+    else:
+        file=open(username_info,"w")
+        
+        file.write(username_info+"\n")
+    
+        file.write(password_info)
+        file.close()
+        Label(screen1,text="resgistration completed",bg="blue").pack()
+    user_enter.delete(0,END)
+    pass_enter.delete(0,END)
+    
+
+    
+def register():
+    global screen1
+    global username
+    global password
+    global user_enter
+    global pass_enter
+    screen1=Toplevel(screen)
+    screen1.title("REgister")
+    screen1.geometry("400x250")
+    username=StringVar()
+    password=StringVar()
+    Label(screen1,text="").pack()
+    Label(screen1,text="username").pack()
+    user_enter=Entry(screen1,textvariable=username)#giveing option to enter the username
+    user_enter.pack()
+    Label(screen1,text="").pack()
+    Label(screen1,text="password").pack()
+    pass_enter=Entry(screen1,textvariable=password)
+    #writing scree1 beacause if we not write scree1 these all will palced in main screen
+    pass_enter.pack()
+    Button(screen1,text="register",command=reg_user).pack()
+def login_ver():
+    global screen3
+    screen3=Toplevel(screen2)
+    screen3.geometry("400x250")
+    screen3.title("Restaurents list")
+    user=use_ver.get()
+
+    passw=pass_ver.get()
+    use_enter.delete(0,END)
+    pass_enter.delete(0,END)
+    L_files=os.listdir()
+    #print(L_files)
+    #print(user)
+    if user in L_files:
+        file1=open(user,"r")
+        verify=file1.read().splitlines()
+        if passw in verify:
+            Label(screen2,text="logi success",bg="green").pack()
+            Button(screen3,text="view restaurents",bg="yellow",command=view_reataruents).pack()
+        else:
+            Label(screen2,text="password in coorect",bg="red").pack()
+    else:
+        Label(screen2,text="user not found",bg="red").pack()
+        
+    
+    
+    
+    
+def login():
+    global screen2
+    global use_ver
+    global pass_ver
+    global use_enter
+    global pass_enter
+    screen2=Toplevel(screen)
+    use_ver=StringVar()
+    pass_ver=StringVar()
+    screen2.geometry("450x300")
+    Label(screen2,text="enter detais for login").pack()
+    Label(screen2,text="").pack()
+    Label(screen2,text="username").pack()
+    use_enter=Entry(screen2,textvariable=use_ver)
+    use_enter.pack()
+    Label(screen2,text="").pack()
+    Label(screen2,text="password").pack()
+    pass_enter=Entry(screen2,textvariable=pass_ver)
+    pass_enter.pack()
+    Button(screen2,text="login",command=login_ver).pack()
+
+
+#restarent code 
+
+
+
+def view_reataruents():
+    global screen4
+    screen4=Toplevel(screen3)
+    screen4.geometry("450x450")
+    screen4.title("list of restaruents")
+    l=os.listdir()
+    print(l)
+    file=open("res_names.txt","r")
+    l_file=file.read().splitlines()
+    for i in l_file:
+        #c=0
+
+        def res_items(x=i+".txt"):
+            global screen5;
+            screen5=Toplevel(screen4)
+            screen5.geometry("450x450")
+            screen5.title("list of items in restarent")
+            f=open(x,"r")
+            l=f.read().splitlines()
+            #a=0
+            for i in l:
+                #print(i)
+                k=i.split(",")
+                #b=0
+                for j in k:
+                    l1=Label(screen5,text=j).pack()
+                    #l1.grid(row=a,coloumn=b).pack()
+                    #b=b+1
+                #a=a+1
+
+
+        
+        #print(i)
+        e=Button(screen4,text=i,command=res_items).pack()
+        Label(text="").pack()
+        #c=c+1
+        
+    
+'''
+def res_items(items):
+    k=items
+    global screen5
+    screen5=Toplevel(screen4)
+    file=open(k,"r")
+    lines_items=file.read().splitlines()
+    a=0
+    
+    for i in lines_items:
+        b=0
+        print(i)
+        item_list=i.split(",")
+        print(item_list)
+        for j in item_list:
+            l1=Label(screen5,text=j).pack()
+            #l1.grid(row=a,coloumn=b)
+            #b=b+1
+            b=b+1
+            l2=Label(screen5,text=j).pack()
+            #l2.grid(row=a,coloumn=b)
+            b=b+1
+            l3=Label(screen5,text=j).pack()
+            #l3.grid(row=a,coloumn=b)
+            b=b+1
+            b=Button(screen5,text="place order").pack()
+            a=a+1'''
+'''
+
+'''
+
+            
+    
+        
+    
+    
+
+
+
+
+
+    
+def main_screen():
+    global screen
+    screen=Tk()
+    screen.geometry("500x250")
+    screen.title("multiple choice correction")
+    Label(text="MARKS VERFICATION",bg="red",font=("calibri",15)).pack()
+    Label(text="").pack()
+    Button(text="login",command=login).pack()
+    Label(text="").pack()
+    Button(text="register",command=register).pack()
+    screen.mainloop()
+main_screen()
