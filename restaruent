@@ -108,22 +108,67 @@ def view_reataruents():
         #c=0
 
         def res_items(x=i+".txt"):
-            global screen5;
+            global screen5
             screen5=Toplevel(screen4)
             screen5.geometry("450x450")
             screen5.title("list of items in restarent")
             f=open(x,"r")
             l=f.read().splitlines()
-            #a=0
+            a=0
+            
             for i in l:
                 #print(i)
                 k=i.split(",")
-                #b=0
+                b=0
                 for j in k:
-                    l1=Label(screen5,text=j).pack()
-                    #l1.grid(row=a,coloumn=b).pack()
-                    #b=b+1
-                #a=a+1
+                    l1=Label(screen5,text=j)
+                    l1.grid(row=a,column=b)
+                    b=b+1
+
+
+                
+                        
+
+                    def take_order(price=int(k[2])):
+                        def quan_order():
+                            global screen7
+                            screen7=Toplevel(screen6)
+                            screen7.geometry("450x450")
+                            screen7.title("orders list")
+                            a=int(q.get())
+                            Label(screen7,text="price=").grid(row=0,column=0)
+                            Label(screen7,text=price).grid(row=0,column=1)
+                            Label(screen7,text="quantity=").grid(row=1,column=0)
+                            Label(screen7,text=a).grid(row=1,column=1)
+                            
+                            total=a*price
+                            Label(screen7,text="total=").grid(row=2,column=0)
+                            Label(screen7,text=total).grid(row=2,column=1)
+                            #next ikkanda nuchi rayali code
+                            
+                        
+                        global screen6;
+                        screen6=Toplevel(screen5)
+                        screen6.geometry("450x450")
+                        screen6.title("enter the quantity")
+                        l2=Label(screen6,text="enter the quantity of item")
+                        l2.grid(row=0,column=0)
+                        q=StringVar()
+                        quan=Entry(screen6,textvariable=q,width=35)
+                        quan.grid(row=0,column=1)
+                        b=Button(screen6,text="submit",command=quan_order)
+                        b.grid(row=2,column=1)
+
+                        
+                        
+
+
+
+
+
+                
+                Button(screen5,text="to order",command=take_order).grid(row=a,column=b)
+                a=a+1
 
 
         
@@ -163,10 +208,20 @@ def res_items(items):
 '''
 
 '''
-
-            
+'''
+def take_order(price):
+    global screen6;
+    screen6=Toplevel(screen5)
+    screen6.geometry("450x450")
+    screen6.title("enter the quantity")
+    l2=Label(screen6,text="enter the quantity of item")
+    l2.grid(row=0,column=0)
+    quan=IntVar()
+    quan=Entry(screen6,width=35)
+    quan.grid(row=0,column=1)
+    print(price)       
     
-        
+   '''     
     
     
 
