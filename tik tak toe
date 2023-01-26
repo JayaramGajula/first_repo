@@ -9,63 +9,120 @@ def main_screen():
 
 
     def check_b1():
+        global i
+        
         
         if((b1.cget('text')==b2.cget('text')==b3.cget('text')) or (b1.cget('text')==b4.cget('text')==b7.cget('text')) or (b1.cget('text')==b5.cget('text')==b9.cget('text'))):
            
             print(b1.cget('text')," wins")
             screen.destroy()
+        if i==8:
+            print("draw")
+            screen.destroy()
 
 
 
     def check_b2():
+        global i
+        
         if((b1.cget('text')==b2.cget('text')==b3.cget('text')) or(b2.cget('text')==b5.cget('text')==b8.cget('text'))):
             print(b2.cget('text'),"wins")
+            screen.destroy()
+        if i==8:
+            print("draw")
             screen.destroy()
 
 
 
     def check_b3():
+        global i
+        
+        
+        
         if((b1.cget('text')==b2.cget('text')==b3.cget('text')) or (b3.cget('text')==b6.cget('text')==b9.cget('text')) or (b3.cget('text')==b5.cget('text')==b7.cget('text'))):
             
             print(b3.cget('text'),"wins")
             screen.destroy()
-
+        if i==8:
+            print("draw")
+            screen.destroy()
+        
 
 
     def check_b4():
+        global i
+        if i==9:
+            print("draw")
+            screen.destroy()
+        
+        
         if((b4.cget('text')==b5.cget('text')==b6.cget('text')) or (b1.cget('text')==b4.cget('text')==b7.cget('text'))):
             print(b4.cget('text'),"wins")
             screen.destroy()
 
 
     def check_b5():
+        global i
+        
+        
+        
         if((b4.cget('text')==b5.cget('text')==b6.cget('text')) or (b2.cget('text')==b5.cget('text')==b8.cget('text')) or (b1.cget('text')==b5.cget('text')==b9.cget('text')) or (b3.cget('text')==b5.cget('text')==b7.cget('text'))):
             
             print(b5.cget('text'),"wins")
             screen.destroy()
+        if i==8:
+            print("draw")
+            screen.destroy()
             
 
     def check_b6():
+        global i
+        
+        
+        
         if((b4.cget('text')==b5.cget('text')==b6.cget('text')) or (b3.cget('text')==b6.cget('text')==b9.cget('text'))):
             print(b6.cget('text'),"wins")
+            screen.destroy()
+        if i==8:
+            print("draw")
             screen.destroy()
 
 
     def check_b7():
+        global i
+        
+        
+        
         if((b7.cget('text')==b8.cget('text')==b9.cget('text')) or (b1.cget('text')==b4.cget('text')==b7.cget('text')) or (b7.cget('text')==b5.cget('text')==b3.cget('text'))):
             print(b7.cget('text'),"wins")
             screen.destroy()
+        if i==8:
+            print("draw")
+            screen.destroy()
 
     def check_b8():
+        global i
+        
+        
         if((b7.cget('text')==b8.cget('text')==b9.cget('text')) or (b2.cget('text')==b5.cget('text')==b8.cget('text'))):
             print(b8.cget('text'),"wins")
             screen.destroy()
+        if i==8:
+            print("draw")
+            screen.destroy()
 
     def check_b9():
+        global i
+        
+        
+        
         
         if((b7.cget('text')==b8.cget('text')==b9.cget('text')) or (b3.cget('text')==b6.cget('text')==b9.cget('text')) or (b1.cget('text')==b5.cget('text')==b9.cget('text'))):
            
             print(b9.cget('text'),"wins")
+            screen.destroy()
+        if i==8:
+            print("draw")
             screen.destroy()
            
            
@@ -77,9 +134,9 @@ def main_screen():
 
     def b1input():
         global i
-        if(i==9):
-            print(draw)
-            exit
+        '''if(i==8):
+            print("draw")
+            screen.destroy()'''
         if(i!=9):
             if(i%2==0):
                 str="x"
@@ -102,9 +159,10 @@ def main_screen():
     def b2input():
         
         global i
-        if(i==9):
-            print(draw)
-            exit
+        '''if(i==8):
+            print("draw")
+            screen.destroy()'''
+            
         if(i!=9):
             if(i%2==0):
                 str="x"
@@ -125,9 +183,9 @@ def main_screen():
 
     def b3input():
         global i
-        if(i==9):
-            print(draw)
-            exit
+        '''if(i==8):
+            print("draw")
+            screen.destroy()'''
         if(i!=9):
             if(i%2==0):
                 str="x"
@@ -147,9 +205,9 @@ def main_screen():
 
     def b4input():
         global i
-        if(i==9):
-            print(draw)
-            exit
+        '''if(i==8):
+            print("draw")
+            screen.destroy()'''
         if(i!=9):
             if(i%2==0):
                 str="x"
@@ -168,9 +226,9 @@ def main_screen():
 
     def b5input():
         global i
-        if(i==9):
-            print(draw)
-            exit
+        '''if(i==8):
+            print("draw")
+            screen.destroy()'''
        
         if(i!=9):
             if(i%2==0):
@@ -190,9 +248,9 @@ def main_screen():
     def b6input():
         
         global i
-        if(i==9):
-            print(draw)
-            exit
+        '''if(i==8):
+            print("draw")
+            screen.destroy()'''
         if(i!=9):
             if(i%2==0):
                 str="x"
@@ -210,9 +268,9 @@ def main_screen():
 
     def b7input():
         global i
-        if(i==9):
-            print(draw)
-            exit
+        '''if(i==8):
+            print("draw")
+            screen.destroy()'''
         if(i!=9):
             if(i%2==0):
                 str="x"
@@ -230,9 +288,9 @@ def main_screen():
 
     def b8input():
         global i
-        if(i==9):
-            print(draw)
-            exit
+        '''if(i==8):
+            print("draw")
+            screen.destroy()'''
         if(i!=9):
             if(i%2==0):
                 str="x"
@@ -250,9 +308,9 @@ def main_screen():
 
     def b9input():
         global i
-        if(i==9):
-            print(draw)
-            exit
+        '''if(i==8):
+            print("draw")
+            screen.destroy()'''
         if(i!=9):
             if(i%2==0):
                 str="x"
