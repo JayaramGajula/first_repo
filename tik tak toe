@@ -1,0 +1,321 @@
+from tkinter import *
+
+#import pyautogui
+
+
+def main_screen():
+
+
+
+
+    def check_b1():
+        
+        if((b1.cget('text')==b2.cget('text')==b3.cget('text')) or (b1.cget('text')==b4.cget('text')==b7.cget('text')) or (b1.cget('text')==b5.cget('text')==b9.cget('text'))):
+           
+            print(b1.cget('text')," wins")
+            screen.destroy()
+
+
+
+    def check_b2():
+        if((b1.cget('text')==b2.cget('text')==b3.cget('text')) or(b2.cget('text')==b5.cget('text')==b8.cget('text'))):
+            print(b2.cget('text'),"wins")
+            screen.destroy()
+
+
+
+    def check_b3():
+        if((b1.cget('text')==b2.cget('text')==b3.cget('text')) or (b3.cget('text')==b6.cget('text')==b9.cget('text')) or (b3.cget('text')==b5.cget('text')==b7.cget('text'))):
+            
+            print(b3.cget('text'),"wins")
+            screen.destroy()
+
+
+
+    def check_b4():
+        if((b4.cget('text')==b5.cget('text')==b6.cget('text')) or (b1.cget('text')==b4.cget('text')==b7.cget('text'))):
+            print(b4.cget('text'),"wins")
+            screen.destroy()
+
+
+    def check_b5():
+        if((b4.cget('text')==b5.cget('text')==b6.cget('text')) or (b2.cget('text')==b5.cget('text')==b8.cget('text')) or (b1.cget('text')==b5.cget('text')==b9.cget('text')) or (b3.cget('text')==b5.cget('text')==b7.cget('text'))):
+            
+            print(b5.cget('text'),"wins")
+            screen.destroy()
+            
+
+    def check_b6():
+        if((b4.cget('text')==b5.cget('text')==b6.cget('text')) or (b3.cget('text')==b6.cget('text')==b9.cget('text'))):
+            print(b6.cget('text'),"wins")
+            screen.destroy()
+
+
+    def check_b7():
+        if((b7.cget('text')==b8.cget('text')==b9.cget('text')) or (b1.cget('text')==b4.cget('text')==b7.cget('text')) or (b7.cget('text')==b5.cget('text')==b3.cget('text'))):
+            print(b7.cget('text'),"wins")
+            screen.destroy()
+
+    def check_b8():
+        if((b7.cget('text')==b8.cget('text')==b9.cget('text')) or (b2.cget('text')==b5.cget('text')==b8.cget('text'))):
+            print(b8.cget('text'),"wins")
+            screen.destroy()
+
+    def check_b9():
+        
+        if((b7.cget('text')==b8.cget('text')==b9.cget('text')) or (b3.cget('text')==b6.cget('text')==b9.cget('text')) or (b1.cget('text')==b5.cget('text')==b9.cget('text'))):
+           
+            print(b9.cget('text'),"wins")
+            screen.destroy()
+           
+           
+           
+           
+    
+
+
+
+    def b1input():
+        global i
+        if(i==9):
+            print(draw)
+            exit
+        if(i!=9):
+            if(i%2==0):
+                str="x"
+                #x=b1.winfo_rootx()
+                #y=b1.winfo_rooty()
+                if(b1.cget('text')==" "):
+                    
+                    b1['text']="x"
+                    check_b1()
+                    i=i+1
+                   
+            else:
+                if(b1.cget('text')==" "):
+                    
+                    b1['text']="o"
+                    check_b1()
+                    i=i+1
+
+
+    def b2input():
+        
+        global i
+        if(i==9):
+            print(draw)
+            exit
+        if(i!=9):
+            if(i%2==0):
+                str="x"
+                #x=b2.winfo_rootx()
+                #y=b2.winfo_rooty()
+                if b2.cget('text')==" ":
+                    
+                    b2['text']="x"
+                    check_b2()
+                    i=i+1
+            else:
+                if b2.cget('text')==" ":
+                    
+                    b2['text']="o"
+                    check_b2()
+                    i=i+1
+
+
+    def b3input():
+        global i
+        if(i==9):
+            print(draw)
+            exit
+        if(i!=9):
+            if(i%2==0):
+                str="x"
+                #x=b3.winfo_rootx()
+                #y=b3.winfo_rooty()
+                if b3.cget('text')==" ":
+                    
+                    b3['text']="x"
+                    check_b3()
+                    i=i+1
+            else:
+                if b3.cget('text')==" ":
+                    
+                    b3['text']="o"
+                    check_b3()
+                    i=i+1
+
+    def b4input():
+        global i
+        if(i==9):
+            print(draw)
+            exit
+        if(i!=9):
+            if(i%2==0):
+                str="x"
+                #x=b4.winfo_rootx()
+                #y=b4.winfo_rooty()
+                if b4.cget('text')==" ":
+                    
+                    b4['text']="x"
+                    check_b4()
+                    i=i+1
+            else:
+                if b4.cget('text')==" ":
+                    b4['text']="o"
+                    check_b4()
+                    i=i+1
+
+    def b5input():
+        global i
+        if(i==9):
+            print(draw)
+            exit
+       
+        if(i!=9):
+            if(i%2==0):
+                str="x"
+                #x=b5.winfo_rootx()
+                #y=b5.winfo_rooty()
+                if b5.cget('text')==" ":
+                    b5['text']="x"
+                    check_b5()
+                    i=i+1
+            else:
+                if b5.cget('text')==" ":
+                    b5['text']="o"
+                    check_b5()
+                    i=i+1
+
+    def b6input():
+        
+        global i
+        if(i==9):
+            print(draw)
+            exit
+        if(i!=9):
+            if(i%2==0):
+                str="x"
+                #x=b6.winfo_rootx()
+                #y=b6.winfo_rooty()
+                if b6.cget('text')==" ":
+                    b6['text']="x"
+                    check_b6()
+                    i=i+1
+            else:
+                if b6.cget('text')==" ":
+                    b6['text']="o"
+                    check_b6()
+                    i=i+1
+
+    def b7input():
+        global i
+        if(i==9):
+            print(draw)
+            exit
+        if(i!=9):
+            if(i%2==0):
+                str="x"
+                #x=b7.winfo_rootx()
+                #y=b7.winfo_rooty()
+                if b7.cget('text')==" ":
+                    b7['text']="x"
+                    check_b7()
+                    i=i+1
+            else:
+                if b7.cget('text')==" ":
+                    b7['text']="o"
+                    check_b7()
+                    i=i+1
+
+    def b8input():
+        global i
+        if(i==9):
+            print(draw)
+            exit
+        if(i!=9):
+            if(i%2==0):
+                str="x"
+                #x=b8.winfo_rootx()
+                #y=b8.winfo_rooty()
+                if b8.cget('text')==" ":
+                    b8['text']="x"
+                    check_b8()
+                    i=i+1
+            else:
+                if b8.cget('text')==" ":
+                    b8['text']="o"
+                    check_b8()
+                    i=i+1
+
+    def b9input():
+        global i
+        if(i==9):
+            print(draw)
+            exit
+        if(i!=9):
+            if(i%2==0):
+                str="x"
+                #x=b9.winfo_rootx()
+                #y=b9.winfo_rooty()
+                if b9.cget('text')==" ":
+                    b9['text']="x"
+                    check_b9()
+                    i=i+1
+            else:
+                if b9.cget('text')==" ":
+                    b9['text']="o"
+                    check_b9()
+                    i=i+1
+
+
+
+   
+
+
+    
+        
+
+
+
+
+
+
+
+    
+    global screen
+    screen=Tk()
+    screen.geometry("500x500")
+    screen.title("game")
+    rows, cols = (3, 3)
+    arr = [[0]*cols]*rows
+    
+    b1=Button(text=" ",height=5,width=5,command=b1input)
+    b1.place(x=100,y=100)
+    
+    b2=Button(text=" ",height=5,width=5,command=b2input)
+    b2.place(x=100,y=200)
+    
+    b3=Button(text=" ",height=5,width=5,command=b3input)
+    b3.place(x=100,y=300)
+  
+    b4=Button(text=" ",height=5,width=5,command=b4input)
+    b4.place(x=200,y=100)
+    
+    b5=Button(text=" ",height=5,width=5,command=b5input)
+    b5.place(x=200,y=200)
+   
+    b6=Button(text=" ",height=5,width=5,command=b6input)
+    b6.place(x=200,y=300)
+  
+    b7=Button(text=" ",height=5,width=5,command=b7input)
+    b7.place(x=300,y=100)
+   
+    b8=Button(text=" ",height=5,width=5,command=b8input)
+    b8.place(x=300,y=200)
+    
+    b9=Button(text=" ",height=5,width=5,command=b9input)
+    b9.place(x=300,y=300)
+i=0
+main_screen()
+    
