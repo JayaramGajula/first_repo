@@ -16,9 +16,11 @@ def main_screen():
            
             print(b1.cget('text')," wins")
             screen.destroy()
+            return
         if i==8:
             print("draw")
             screen.destroy()
+            return
 
 
 
@@ -28,9 +30,11 @@ def main_screen():
         if((b1.cget('text')==b2.cget('text')==b3.cget('text')) or(b2.cget('text')==b5.cget('text')==b8.cget('text'))):
             print(b2.cget('text'),"wins")
             screen.destroy()
+            return
         if i==8:
             print("draw")
             screen.destroy()
+            return
 
 
 
@@ -43,9 +47,11 @@ def main_screen():
             
             print(b3.cget('text'),"wins")
             screen.destroy()
+            return
         if i==8:
             print("draw")
             screen.destroy()
+            return
         
 
 
@@ -70,9 +76,11 @@ def main_screen():
             
             print(b5.cget('text'),"wins")
             screen.destroy()
+            return
         if i==8:
             print("draw")
             screen.destroy()
+            return
             
 
     def check_b6():
@@ -83,9 +91,11 @@ def main_screen():
         if((b4.cget('text')==b5.cget('text')==b6.cget('text')) or (b3.cget('text')==b6.cget('text')==b9.cget('text'))):
             print(b6.cget('text'),"wins")
             screen.destroy()
+            return
         if i==8:
             print("draw")
             screen.destroy()
+            return
 
 
     def check_b7():
@@ -96,9 +106,11 @@ def main_screen():
         if((b7.cget('text')==b8.cget('text')==b9.cget('text')) or (b1.cget('text')==b4.cget('text')==b7.cget('text')) or (b7.cget('text')==b5.cget('text')==b3.cget('text'))):
             print(b7.cget('text'),"wins")
             screen.destroy()
+            return
         if i==8:
             print("draw")
             screen.destroy()
+            return
 
     def check_b8():
         global i
@@ -107,9 +119,11 @@ def main_screen():
         if((b7.cget('text')==b8.cget('text')==b9.cget('text')) or (b2.cget('text')==b5.cget('text')==b8.cget('text'))):
             print(b8.cget('text'),"wins")
             screen.destroy()
+            return
         if i==8:
             print("draw")
             screen.destroy()
+            return
 
     def check_b9():
         global i
@@ -121,9 +135,11 @@ def main_screen():
            
             print(b9.cget('text'),"wins")
             screen.destroy()
+            return
         if i==8:
             print("draw")
             screen.destroy()
+            return
            
            
            
